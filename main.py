@@ -40,10 +40,6 @@ async def ping(ctx):
     if boRobot.language == "EN":
         await ctx.send( constants.TEXT["EN"]["ping"] + round(bot.latency*1000) + "ms")
 
-@bot.command(aliases=['CAT','cat','Cat','Chat','CHAT'])
-async def cat(ctx):
-    
-
 """
 @bot.command(aliases=['8ball', 'ditMoi'])
 async def _8ball(ctx, *args, **kwargs):
