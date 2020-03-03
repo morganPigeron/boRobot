@@ -25,7 +25,7 @@ class Bot():
             #format temp in °C
             cpuTemp = float(stdout) / 1000.0
 
-            return (str(cpuTemp) + " °C")
+            return ("Mon processeur est à "str(cpuTemp) + " °C")
         
         else:
             return "Commande disponible uniquement sur linux ..."
