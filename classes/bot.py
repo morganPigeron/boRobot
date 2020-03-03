@@ -20,8 +20,10 @@ class Bot():
                 stderr = subprocess.STDOUT,
             )
 
+            stdout,stderr = out.communicate()
+
             #format temp in °C
-            cpuTemp = float(out) / 1000.0
+            cpuTemp = float(stdout) / 1000.0
 
             return (str(cpuTemp) + " °C")
         
