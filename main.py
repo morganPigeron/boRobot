@@ -30,11 +30,21 @@ async def on_member_remove(member):
 
 @bot.command(aliases=['ping', 'latency', 'latence'])
 async def _ping(ctx):
-    await ctx.send( constants.TEXT["FR"]["ping"] + str(round(bot.latency*1000)) + "ms")
+    await ctx.send(boRobot.print(constants.TEXT["FR"]["ping"] + str(round(bot.latency*1000)) + "ms"))
 
 @bot.command(aliases=['temp', 'cpuTemp'])
 async def _temp(ctx):
-    await ctx.send(boRobot.getCpuTemp())
+    await ctx.send(boRobot.print(boRobot.getCpuTemp()))
+
+@bot.command(aliases=['speech', 'talk'])
+async def _talk(ctx):
+    if boRobot.speech :
+        boRobot.speech = False
+        await ctx.send(boRobot.print("Talk deactivated"))
+    else : 
+        boRobot.speech = True
+        await ctx.send(boRobot.print("Talk activated"))
+    
 
 bot.run(key.getKey(os.path.join(dir_path, "key.txt")))
 

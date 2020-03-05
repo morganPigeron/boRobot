@@ -6,6 +6,8 @@ class Bot():
     def __init__(self, language = "FR"):
         self.language = language
 
+        self.speech = False
+
     def getCpuTemp(self): #TODO add windows compatibility
         """
         IN : none
@@ -30,3 +32,9 @@ class Bot():
         else:
             return "Commande disponible uniquement sur linux ..."
 
+    def print(str):
+
+        if self.speech :
+            return "/tts " + str
+        else :
+            return str
