@@ -3,8 +3,9 @@ import subprocess
 import sys
 
 class Bot():
-    def __init__(self, language = "FR"):
+    def __init__(self, language = "FR", talk = False):
         self.language = language
+        self.talk = talk
 
     def getCpuTemp(self): #TODO add windows compatibility
         """
@@ -30,3 +31,8 @@ class Bot():
         else:
             return "Commande disponible uniquement sur linux ..."
 
+    def ttsSwitch(self):
+        self.talk = not self.talk
+
+    async def send(self, ctx, message):
+        await ctx.send(message, tts=self.talk )
