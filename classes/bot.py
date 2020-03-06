@@ -31,5 +31,8 @@ class Bot():
         else:
             return "Commande disponible uniquement sur linux ..."
 
-    def send(self, ctx, message):
+    def ttsSwitch(self):
+        self.talk = not self.talk
+
+    async def send(self, ctx, message):
         await ctx.send(message, tts=self.talk )
