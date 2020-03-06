@@ -30,11 +30,11 @@ async def on_member_remove(member):
 
 @bot.command(aliases=['ping', 'latency', 'latence'])
 async def _ping(ctx):
-    await ctx.send( constants.TEXT["FR"]["ping"] + str(round(bot.latency*1000)) + "ms")
+    boRobot.send(ctx, constants.TEXT["FR"]["ping"] + str(round(bot.latency*1000)) + "ms")) 
 
 @bot.command(aliases=['temp', 'cpuTemp'])
 async def _temp(ctx):
-    await ctx.send(boRobot.getCpuTemp())
+    boRobot.send(ctx, boRobot.getCpuTemp())
 
 bot.run(key.getKey(os.path.join(dir_path, "key.txt")))
 
