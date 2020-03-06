@@ -41,6 +41,11 @@ async def _talk(ctx):
     boRobot.ttsSwitch()
     await boRobot.send(ctx, "Ma variable: talk = " + str(boRobot.talk))
 
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.CommandNotFound):
+        await boRobot.send(ctx, "Je ne comprend pas ... ")
+
 bot.run(key.getKey(os.path.join(dir_path, "key.txt")))
 
 
