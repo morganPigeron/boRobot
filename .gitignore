@@ -2,3 +2,4 @@ Venv
 key.txt
 .vscode
 __pycache__
+*.pyc
